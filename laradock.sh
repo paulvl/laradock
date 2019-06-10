@@ -22,7 +22,7 @@ else
             cd $LARADOCKFOLDER && docker-compose build ${@}
         fi
     elif [ "$1" == "down" ]; then
-        cd $LARADOCKFOLDER && docker-compose down && sudo service nginx start && sudo service redis-server start
+        cd $LARADOCKFOLDER && docker-compose down
     elif [ "$1" == "restart" ]; then
         cd $LARADOCKFOLDER && docker-compose down && docker-compose up -d nginx mysql redis phpmyadmin
         #cd $LARADOCKFOLDER && docker-compose restart -t 0 nginx mysql phpmyadmin
